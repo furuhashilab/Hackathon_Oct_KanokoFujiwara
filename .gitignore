@@ -1,8 +1,5 @@
-# 生成した ZIP（必要なときに make-zip.sh で作り直せるため管理しない）
 dist/
 *.zip
-
-# OS / エディタが作るファイル
 .DS_Store
 Thumbs.db
 .vscode/
