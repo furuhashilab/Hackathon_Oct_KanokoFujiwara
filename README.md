@@ -1,6 +1,6 @@
 # Hackathon_Oct_KanokoFujiwara
 
-# 🌴 Thailand Memories — Re Visualizer Plugin
+# 🌴 Re:Earth Visualizerを使った場所と記憶をつなぐ、デジタル旅アルバム
 
 タイ旅行の思い出を **写真と地図で振り返る** ための、[Re Visualizer](https://reearth.io/) 用ウィジェットプラグインです。
 
