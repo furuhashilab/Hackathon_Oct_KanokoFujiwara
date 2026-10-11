@@ -48,6 +48,7 @@
 | `ZIP_GUIDE.md` | ZIP の作り方と Re への導入手順 | — |
 | `make-zip.sh` | ZIP を自動で作るスクリプト（Mac / Linux） | — |
 | `index.html` | GitHub Pages 用の紹介ページ | — |
+| `Photo/` | 思い出カードに表示する写真（GitHub Pages で公開して URL で読み込む） | — |
 | `assets/` | 紹介ページ・README 用のスクリーンショット | — |
 | `LICENSE` | ライセンス（CC BY 4.0） | — |
 | `.gitignore` | Git で管理しないファイルの指定 | — |
@@ -82,7 +83,8 @@
 - `photoUrl` が空（`""`）のとき、または画像が読み込めないときは 📷 のプレースホルダーが表示されます。
 - 写真は **インターネット上で公開されている URL（https://〜）** を指定してください。
   たとえばこのリポジトリに画像を置いて GitHub Pages で公開すると、
-  `https://furuhashilab.github.io/Hackathon_Oct_KanokoFujiwara/photos/bangkok.jpg` のような URL で使えます。
+  `https://furuhashilab.github.io/Hackathon_Oct_KanokoFujiwara/Photo/Bangkok.jpg` のような URL で使えます。
+  （フォルダ名・ファイル名の大文字と小文字は URL と完全に一致させてください）
   （ZIP には画像を入れません）
 
 ### スポットを追加する
