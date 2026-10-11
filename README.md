@@ -4,8 +4,8 @@
 
 タイ旅行の思い出を **写真と地図で振り返る** ための、[Re Visualizer](https://reearth.io/) 用ウィジェットプラグインです。
 
-- 紹介ページ（GitHub Pages）：`https://<GitHubユーザー名>.github.io/Hackathon_Oct_KanokoFujiwara/` ※公開後に書き換え
-- 公開済み Re プロジェクト：**（準備中・URL 未確定）**
+- 紹介ページ（GitHub Pages）：https://furuhashilab.github.io/Hackathon_Oct_KanokoFujiwara/
+- 公開済み Re プロジェクト：https://c-01m4nrq2eq44ttm7wtwsarb72h.visualizer.reearth.io
 
 <p>
   <img src="assets/screenshot-list.png" alt="スポット一覧" width="240">
@@ -82,7 +82,7 @@
 - `photoUrl` が空（`""`）のとき、または画像が読み込めないときは 📷 のプレースホルダーが表示されます。
 - 写真は **インターネット上で公開されている URL（https://〜）** を指定してください。
   たとえばこのリポジトリに画像を置いて GitHub Pages で公開すると、
-  `https://<ユーザー名>.github.io/Hackathon_Oct_KanokoFujiwara/photos/bangkok.jpg` のような URL で使えます。
+  `https://furuhashilab.github.io/Hackathon_Oct_KanokoFujiwara/photos/bangkok.jpg` のような URL で使えます。
   （ZIP には画像を入れません）
 
 ### スポットを追加する
@@ -115,6 +115,7 @@
 - ✅ Re のモバイル表示でもウィジェットが表示されることを確認済み（ウィジェットはデスクトップ用とモバイル用で別々に追加が必要）
 - ✅ v1.0.1 のスマートフォン向け縮小表示を Re のモバイル表示で確認済み
 - ✅ たたむボタン（「－」「＋」）も Re 上で確認済み
+- ✅ v1.0.2 で、GitHub Pages に置いた写真（`Photo/` フォルダ）が Re のカードに表示されることを確認済み
 - 使用した API は Re Visualizer 公式リポジトリ（reearth/reearth-visualizer）の型定義・テスト用プラグインと照合しています
 
 ## 今後の追加機能（予定）
