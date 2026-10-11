@@ -62,6 +62,18 @@
     .btn.secondary { background: var(--white); }
     .btn.disabled { opacity: 0.6; pointer-events: none; }
     .note { font-size: 13px; color: var(--muted); }
+    .map-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      margin-top: 12px;
+      border: 3px solid var(--yellow-dark);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--yellow);
+    }
+    .map-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    @media (max-width: 600px) { .map-frame { aspect-ratio: 3 / 4; } }
     .shots { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
     .polaroid {
       margin: 0;
@@ -93,11 +105,13 @@
     <section class="cta">
       <h2>作品を見る</h2>
       <p>
-        <!-- ★ Re プロジェクトを公開したら、href の "#" を公開URLに書き換え、class から disabled を消してください -->
-        <a id="reearth-link" class="btn disabled" href="#" target="_blank" rel="noopener">🗺 Re の地図で見る（準備中）</a>
+        <a id="reearth-link" class="btn" href="https://c-01m4nrq2eq44ttm7wtwsarb72h.visualizer.reearth.io" target="_blank" rel="noopener">🗺 Re の地図で見る</a>
         <a class="btn secondary" href="https://github.com/furuhashilab/Hackathon_Oct_KanokoFujiwara" target="_blank" rel="noopener">💻 GitHub でソースを見る</a>
       </p>
-      <p class="note">公開済み Re プロジェクトの URL は現在準備中です。</p>
+      <div class="map-frame">
+        <iframe src="https://c-01m4nrq2eq44ttm7wtwsarb72h.visualizer.reearth.io" title="Thailand Memories（Re Visualizer）" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <p class="note">地図の左上のウィジェットからスポットを選んでみてください。大きな画面で見るときは「Re の地図で見る」へ。</p>
     </section>
 
     <section>

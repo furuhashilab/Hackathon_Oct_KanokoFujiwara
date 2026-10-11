@@ -5,7 +5,7 @@
 タイ旅行の思い出を **写真と地図で振り返る** ための、[Re Visualizer](https://reearth.io/) 用ウィジェットプラグインです。
 
 - 紹介ページ（GitHub Pages）：https://furuhashilab.github.io/Hackathon_Oct_KanokoFujiwara/
-- 公開済み Re プロジェクト：**（準備中・URL 未確定）**
+- 公開済み Re プロジェクト：https://c-01m4nrq2eq44ttm7wtwsarb72h.visualizer.reearth.io
 
 <p>
   <img src="assets/screenshot-list.png" alt="スポット一覧" width="240">
