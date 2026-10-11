@@ -4,7 +4,7 @@
 
 タイ旅行の思い出を **写真と地図で振り返る** ための、[Re Visualizer](https://reearth.io/) 用ウィジェットプラグインです。
 
-- 紹介ページ（GitHub Pages）：`https://<GitHubユーザー名>.github.io/Hackathon_Oct_KanokoFujiwara/` ※公開後に書き換え
+- 紹介ページ（GitHub Pages）：https://furuhashilab.github.io/Hackathon_Oct_KanokoFujiwara/
 - 公開済み Re プロジェクト：**（準備中・URL 未確定）**
 
 <p>
@@ -82,7 +82,7 @@
 - `photoUrl` が空（`""`）のとき、または画像が読み込めないときは 📷 のプレースホルダーが表示されます。
 - 写真は **インターネット上で公開されている URL（https://〜）** を指定してください。
   たとえばこのリポジトリに画像を置いて GitHub Pages で公開すると、
-  `https://<ユーザー名>.github.io/Hackathon_Oct_KanokoFujiwara/photos/bangkok.jpg` のような URL で使えます。
+  `https://furuhashilab.github.io/Hackathon_Oct_KanokoFujiwara/photos/bangkok.jpg` のような URL で使えます。
   （ZIP には画像を入れません）
 
 ### スポットを追加する
