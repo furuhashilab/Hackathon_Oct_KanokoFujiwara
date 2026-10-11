@@ -10,6 +10,6 @@ extensions:
     widgetLayout:
       extended: false
       defaultLocation:
-        zone: inner
+        zone: outer
         section: left
         area: top
