@@ -71,6 +71,10 @@ const OVERVIEW = { lat: 13.0, lng: 101.0, height: 1800000 };
 const WIDGET_WIDTH = 300;
 const WIDGET_HEIGHT = 460;
 const WIDGET_HEIGHT_FOLDED = 48;
+// スマートフォン表示のときの大きさ
+const MOBILE_WIDTH = 240;
+const MOBILE_HEIGHT = 320;
+const MOBILE_HEIGHT_RATIO = 0.4; // 画面の高さの何割まで使うか
 
 // =====================================================================
 // ここから下はプログラム本体です（通常は編集不要）
@@ -223,6 +227,24 @@ const html = `
   .places { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.6; }
   .card-actions { display: flex; gap: 6px; margin-top: 10px; }
   .card-actions .btn { flex: 1; }
+
+  /* スマートフォン用（ウィジェットの幅が狭いとき） */
+  @media (max-width: 260px) {
+    .header { padding: 6px 8px; }
+    .header h1 { font-size: 13px; }
+    .btn { padding: 4px 10px; font-size: 12px; min-height: 30px; }
+    .content { padding: 8px; }
+    .spot-item { padding: 6px; margin-bottom: 6px; gap: 8px; }
+    .thumb, .placeholder.thumb { width: 36px; height: 36px; }
+    .placeholder.thumb .icon { font-size: 16px; }
+    .spot-name { font-size: 13px; }
+    .spot-sub { font-size: 11px; }
+    .photo, .placeholder { aspect-ratio: 16 / 9; }
+    .placeholder .icon { font-size: 24px; }
+    .card { padding: 8px 8px 10px; }
+    .card h2 { font-size: 16px; }
+    .memory, .places { font-size: 12px; }
+  }
 </style>
 
 <div class="album" id="album">
@@ -236,8 +258,6 @@ const html = `
 
 <script>
   var SPOTS = ${spotsJson};
-  var FULL_HEIGHT = ${WIDGET_HEIGHT};
-  var FOLDED_HEIGHT = ${WIDGET_HEIGHT_FOLDED};
 
   var album = document.getElementById("album");
   var content = document.getElementById("content");
@@ -358,19 +378,44 @@ const html = `
     folded = !folded;
     album.classList.toggle("folded", folded);
     foldBtn.textContent = folded ? "＋" : "－";
-    send({ action: "resize", height: folded ? FOLDED_HEIGHT : FULL_HEIGHT });
+    send({ action: "fold", folded: folded });
   };
 
   showList();
 </script>
 `;
 
+// 画面サイズに合わせてウィジェットの大きさを決める
+// 公式API: reearth.viewer.viewport（width / height / isMobile）
+let folded = false;
+
+function widgetSize() {
+  const vp = reearth.viewer && reearth.viewer.viewport;
+  if (vp && vp.isMobile) {
+    const height = Math.min(MOBILE_HEIGHT, Math.round(vp.height * MOBILE_HEIGHT_RATIO));
+    return { width: MOBILE_WIDTH, height: folded ? WIDGET_HEIGHT_FOLDED : height };
+  }
+  return { width: WIDGET_WIDTH, height: folded ? WIDGET_HEIGHT_FOLDED : WIDGET_HEIGHT };
+}
+
+function applySize() {
+  const size = widgetSize();
+  // 公式API: reearth.ui.resize(幅, 高さ)
+  reearth.ui.resize(size.width, size.height);
+}
+
 // UI を表示する（公式API: reearth.ui.show）
+const initialSize = widgetSize();
 reearth.ui.show(html, {
   visible: true,
-  width: WIDGET_WIDTH,
-  height: WIDGET_HEIGHT,
+  width: initialSize.width,
+  height: initialSize.height,
 });
+
+// 画面サイズが変わったら大きさを合わせ直す（公式API: reearth.viewer.on("resize", ...)）
+if (reearth.viewer && typeof reearth.viewer.on === "function") {
+  reearth.viewer.on("resize", applySize);
+}
 
 // UI からのメッセージを受け取る（公式API: reearth.extension.on("message", ...)）
 reearth.extension.on("message", function (msg) {
@@ -396,8 +441,8 @@ reearth.extension.on("message", function (msg) {
       { lat: OVERVIEW.lat, lng: OVERVIEW.lng, height: OVERVIEW.height, heading: 0, pitch: -Math.PI / 2, roll: 0 },
       { duration: 2 }
     );
-  } else if (msg.action === "resize" && typeof msg.height === "number") {
-    // 公式API: reearth.ui.resize(幅, 高さ)
-    reearth.ui.resize(WIDGET_WIDTH, msg.height);
+  } else if (msg.action === "fold") {
+    folded = !!msg.folded;
+    applySize();
   }
 });

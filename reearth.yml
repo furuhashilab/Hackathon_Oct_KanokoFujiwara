@@ -1,6 +1,6 @@
 id: thailand-memories
 name: Thailand Memories
-version: 1.0.0
+version: 1.0.1
 description: タイ旅行の思い出を写真と地図で振り返るウィジェットプラグイン
 extensions:
   - id: thailand-widget
@@ -10,6 +10,6 @@ extensions:
     widgetLayout:
       extended: false
       defaultLocation:
-        zone: inner
+        zone: outer
         section: left
         area: top
