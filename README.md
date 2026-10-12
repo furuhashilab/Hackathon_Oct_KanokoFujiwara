@@ -14,7 +14,7 @@
 
 ## ハッカソン課題
 
-古橋研究室オンラインハッカソン（ソロハッカソン）の成果物です。
+ハッカソンの成果物です。
 
 | 課題の条件 | この作品での対応 |
 | --- | --- |
@@ -22,11 +22,7 @@
 | ソロハッカソン | 1人で制作 |
 | AI は Claude Code のみ | 設計・コード・ドキュメントの作成はすべて Claude Code |
 | FuruhashiLab Organization のリポジトリで GitHub Pages 公開 | https://furuhashilab.github.io/Hackathon_Oct_KanokoFujiwara/ |
-| リポジトリ更新はなるべく Claude Code で | Claude Code が作業ブランチ `claude/loving-cerf-7osid3` でコミットを作成。クラウド版 Claude Code からの push は組織の Claude GitHub App 未連携のため 403 になったが、ローカル（PowerShell）の Claude Code から push し、README の衝突解決も Claude Code が行い、プルリクエスト #1 で main にマージ |
 | ライセンス CC BY 4.0 | [LICENSE](LICENSE) |
-| 発表資料はブログ＋グラレコ | [振り返りブログ（blog.html）](https://furuhashilab.github.io/Hackathon_Oct_KanokoFujiwara/blog.html)・グラレコは `assets/graphic-recording.png` |
-| 発表は1分目標（最大3分） | 原稿は [PRESENTATION.md](PRESENTATION.md) |
-
 ---
 
 ## 作品の目的
