@@ -31,6 +31,33 @@
 スポットを選ぶと地図がその場所へ移動し、写真と思い出の文章が表示されます。
 Claude Code による開発・GitHub でのソース管理・GitHub Pages での公開を行いました。
 
+## Re:Earth / Re:Earth Visualizer とは
+
+**Re:Earth（リアース）** は、株式会社ユーカリヤ（Eukarya）が開発しているオープンソースの **WebGIS**（Web 上で地図や地理空間データを扱うしくみ）です。
+東京大学 渡邉英徳研究室と共同で開発され、2021年に公開されました。
+国土交通省の 3D 都市モデル「Project PLATEAU」の可視化環境「PLATEAU VIEW」の基盤にも使われています。
+
+Re:Earth には、次の3つがあります。
+
+- **Re:Earth Visualizer**：地図を作って見せる
+- **Re:Earth CMS**：データを管理・配信する
+- **Re:Earth Marketplace**：プラグインを公開・共有する
+
+**Re:Earth Visualizer** は、ブラウザ上の 3D の地球儀に地図データを重ねて表示し、そのまま Web に公開できるツールです。
+描画エンジンには CesiumJS が使われていて、ライセンスは Apache-2.0 です。主な機能は次のとおりです。
+
+- GIS データの表示
+- 図形の描画
+- 条件による見た目の切り替え
+- ストーリー機能
+- 公開・埋め込み
+- JavaScript で機能を追加できる「プラグイン」
+
+この作品 **Thailand Memories** は、Re:Earth Visualizer の「プラグイン」機能を使って作ったウィジェットです。
+
+- 公式サイト：https://reearth.io/
+- GitHub：https://github.com/reearth/reearth-visualizer
+
 ## 使用技術
 
 - Re Visualizer Plugin API（`reearth.ui.show` / `reearth.ui.resize` / `reearth.extension.on("message")` / `reearth.camera.flyTo`）
