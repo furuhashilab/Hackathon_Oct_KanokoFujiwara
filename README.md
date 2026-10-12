@@ -12,6 +12,21 @@
   <img src="assets/screenshot-card.png" alt="思い出カード" width="240">
 </p>
 
+## ハッカソン課題
+
+古橋研究室オンラインハッカソン（ソロハッカソン）の成果物です。発表は 2026/10/13（火）のゼミ。
+
+| 課題の条件 | この作品での対応 |
+| --- | --- |
+| FOSS4G Hiroshima / SotM Asia OSAKA で紹介された、初めて使う技術を1つ選ぶ | **Re:Earth Visualizer**（プラグイン API）<!-- 要確認：紹介されたイベント・発表名 --> |
+| ソロハッカソン | 1人で制作 |
+| AI は Claude Code のみ | 設計・コード・ドキュメントの作成はすべて Claude Code |
+| FuruhashiLab Organization のリポジトリで GitHub Pages 公開 | https://furuhashilab.github.io/Hackathon_Oct_KanokoFujiwara/ |
+| リポジトリ更新はなるべく Claude Code で | Claude Code が作業ブランチ `claude/loving-cerf-7osid3` にコミット。組織に Claude GitHub App が未インストールのため push が 403 となり、今回は Claude Code が作ったファイルを手動でアップロード |
+| ライセンス CC BY 4.0 | [LICENSE](LICENSE) |
+| 発表資料はブログ＋グラレコ | [振り返りブログ（blog.html）](https://furuhashilab.github.io/Hackathon_Oct_KanokoFujiwara/blog.html)・グラレコは `assets/graphic-recording.png` |
+| 発表は1分目標（最大3分） | 原稿は [PRESENTATION.md](PRESENTATION.md) |
+
 ---
 
 ## 作品の目的
@@ -48,6 +63,8 @@
 | `ZIP_GUIDE.md` | ZIP の作り方と Re への導入手順 | — |
 | `make-zip.sh` | ZIP を自動で作るスクリプト（Mac / Linux） | — |
 | `index.html` | GitHub Pages 用の紹介ページ | — |
+| `blog.html` | ハッカソンの振り返りブログ（グラレコ掲載） | — |
+| `PRESENTATION.md` | 発表原稿（1分版・3分版）とグラレコ構成案 | — |
 | `Photo/` | 思い出カードに表示する写真（GitHub Pages で公開して URL で読み込む） | — |
 | `assets/` | 紹介ページ・README 用のスクリーンショット | — |
 | `LICENSE` | ライセンス（CC BY 4.0） | — |
