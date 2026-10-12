@@ -76,23 +76,6 @@ Re:Earth には、次の3つがあります。
 | ④ デザイン | パステルイエロー × 白の旅行アルバム風。幅 300px のコンパクト設計、「－」ボタンでたたむことも可能。スマートフォンでは幅 240px・画面の高さの 4 割に自動で小さくなる |
 | ⑤ 拡張性 | スポットは `thailand-widget.js` 冒頭の `SPOTS` に 1 か所でまとめて定義 |
 
-## ファイル構成
-
-| ファイル | 役割 | ZIP に入れる？ |
-| --- | --- | --- |
-| `reearth.yml` | プラグインの設定（ID・名前・拡張ID `thailand-widget`・表示位置） | ✅ |
-| `thailand-widget.js` | ウィジェット本体。データ定義・HTML・CSS・動作をすべて含む | ✅ |
-| `README.md` | この説明書 | — |
-| `ZIP_GUIDE.md` | ZIP の作り方と Re:Earth Visualizer への導入手順 | — |
-| `make-zip.sh` | ZIP を自動で作るスクリプト（Mac / Linux） | — |
-| `index.html` | GitHub Pages 用の紹介ページ | — |
-| `blog.html` | ハッカソンの振り返りブログ（グラレコ掲載） | — |
-| `PRESENTATION.md` | 発表原稿（1分版・3分版）とグラレコ構成案 | — |
-| `Photo/` | 思い出カードに表示する写真（GitHub Pages で公開して URL で読み込む） | — |
-| `assets/` | 紹介ページ・README 用のスクリーンショット | — |
-| `LICENSE` | ライセンス（CC BY 4.0） | — |
-| `.gitignore` | Git で管理しないファイルの指定 | — |
-
 ## 開発方法
 
 1. このリポジトリをクローン（またはダウンロード）する
