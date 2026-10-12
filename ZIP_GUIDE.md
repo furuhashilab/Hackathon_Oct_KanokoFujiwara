@@ -52,15 +52,6 @@ thailand-memories.zip
 3. 右クリック →「ZIP ファイルに圧縮する」（Windows 10 は「送る」→「圧縮 (zip 形式) フォルダー」）
 4. できた ZIP を `thailand-memories.zip` に名前を変える
 
-### 方法 C：ターミナルでスクリプトを使う（Mac / Linux）
-
-```sh
-sh make-zip.sh
-```
-
-`dist/thailand-memories.zip` ができます。最後に中身の一覧が表示されるので、
-`reearth.yml` と `thailand-widget.js` がフォルダ名なしで並んでいることを確認してください。
-
 ### 確認方法
 
 ZIP を作ったら、一度ダブルクリックで展開してみて、
