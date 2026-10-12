@@ -1,5 +1,5 @@
 // =====================================================================
-// Thailand Memories — Re Visualizer ウィジェットプラグイン
+// Thailand Memories — Re:Earth Visualizer ウィジェットプラグイン
 // 拡張ID: thailand-widget（reearth.yml の extensions[].id とファイル名を一致させる）
 // =====================================================================
 

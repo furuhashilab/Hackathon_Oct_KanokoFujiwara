@@ -2,10 +2,10 @@
 
 # 🌴 Re:Earth Visualizerを使った場所と記憶をつなぐ、デジタル旅アルバム
 
-タイ旅行の思い出を **写真と地図で振り返る** ための、[Re Visualizer](https://reearth.io/) 用ウィジェットプラグインです。
+タイ旅行の思い出を **写真と地図で振り返る** ための、[Re:Earth Visualizer](https://reearth.io/) 用ウィジェットプラグインです。
 
 - 紹介ページ（GitHub Pages）：https://furuhashilab.github.io/Hackathon_Oct_KanokoFujiwara/
-- 公開済み Re プロジェクト：https://c-01m4nrq2eq44ttm7wtwsarb72h.visualizer.reearth.io
+- 公開済み Re:Earth Visualizer プロジェクト：https://c-01m4nrq2eq44ttm7wtwsarb72h.visualizer.reearth.io
 
 <p>
   <img src="assets/screenshot-list.png" alt="スポット一覧" width="240">
@@ -60,7 +60,7 @@ Re:Earth には、次の3つがあります。
 
 ## 使用技術
 
-- Re Visualizer Plugin API（`reearth.ui.show` / `reearth.ui.resize` / `reearth.extension.on("message")` / `reearth.camera.flyTo`）
+- Re:Earth Visualizer Plugin API（`reearth.ui.show` / `reearth.ui.resize` / `reearth.extension.on("message")` / `reearth.camera.flyTo`）
 - JavaScript（ECMAScript 2020 互換）
 - HTML / CSS（JavaScript ファイル内に記述）
 - GitHub / GitHub Pages
@@ -83,7 +83,7 @@ Re:Earth には、次の3つがあります。
 | `reearth.yml` | プラグインの設定（ID・名前・拡張ID `thailand-widget`・表示位置） | ✅ |
 | `thailand-widget.js` | ウィジェット本体。データ定義・HTML・CSS・動作をすべて含む | ✅ |
 | `README.md` | この説明書 | — |
-| `ZIP_GUIDE.md` | ZIP の作り方と Re への導入手順 | — |
+| `ZIP_GUIDE.md` | ZIP の作り方と Re:Earth Visualizer への導入手順 | — |
 | `make-zip.sh` | ZIP を自動で作るスクリプト（Mac / Linux） | — |
 | `index.html` | GitHub Pages 用の紹介ページ | — |
 | `blog.html` | ハッカソンの振り返りブログ（グラレコ掲載） | — |
@@ -97,42 +97,17 @@ Re:Earth には、次の3つがあります。
 
 1. このリポジトリをクローン（またはダウンロード）する
 2. `thailand-widget.js` をテキストエディタ（VS Code など）で開いて編集する
-3. ZIP を作り直して Re にアップロードし、動作を確認する（→ [ZIP_GUIDE.md](ZIP_GUIDE.md)）
+3. ZIP を作り直して Re:Earth Visualizer にアップロードし、動作を確認する（→ [ZIP_GUIDE.md](ZIP_GUIDE.md)）
 4. 変更を GitHub にコミット・プッシュする
 
 ビルド作業やライブラリのインストールは不要です。
-
-### 写真・文章を差し替える
-
-`thailand-widget.js` の先頭にある `SPOTS` を編集します。
-
-```js
-{
-  id: "bangkok",
-  name: "Bangkok",
-  nameJa: "バンコク",
-  lat: 13.7563,
-  lng: 100.5018,
-  height: 30000,
-  photoUrl: "https://example.com/my-photo.jpg", // ← 写真のURLを入れる
-  memory: "ワット・アルンの夕焼けがとてもきれいでした。", // ← 思い出の文章
-  places: ["ワット・アルン", "ワット・ポー"],            // ← 訪れた場所
-},
-```
-
-- `photoUrl` が空（`""`）のとき、または画像が読み込めないときは 📷 のプレースホルダーが表示されます。
-- 写真は **インターネット上で公開されている URL（https://〜）** を指定してください。
-  たとえばこのリポジトリに画像を置いて GitHub Pages で公開すると、
-  `https://furuhashilab.github.io/Hackathon_Oct_KanokoFujiwara/Photo/Bangkok.jpg` のような URL で使えます。
-  （フォルダ名・ファイル名の大文字と小文字は URL と完全に一致させてください）
-  （ZIP には画像を入れません）
 
 ### スポットを追加する
 
 `SPOTS` の `{ ... },` のかたまりを 1 つコピーして、`id`（他と重ならない名前）・名前・緯度経度・文章を書き換えるだけです。
 一覧・カード・地図の移動は自動で対応します。
 
-## Re への導入方法
+## Re:Earth Visualizer への導入方法
 
 詳しくは **[ZIP_GUIDE.md](ZIP_GUIDE.md)** を見てください。概要：
 
@@ -150,19 +125,19 @@ Re:Earth には、次の3つがあります。
 
 ## 動作確認の状況
 
-- ✅ **Re Visualizer（v1.0.0-beta.16.26）の実プロジェクトで動作確認済み**
+- ✅ **Re:Earth Visualizer（v1.0.0-beta.16.26）の実プロジェクトで動作確認済み**
   - ZIP のインストール、ウィジェットの表示、スポット一覧・思い出カード・写真プレースホルダーの表示
   - 4 つのスポット（Bangkok・Chiang Mai・Phuket・Koh Samui）と「タイ全体を見る」で、地図が正しい場所へ移動すること
 - ✅ プラグインプレイグラウンドでも表示とカメラ移動を確認済み
-- ✅ Re のモバイル表示でもウィジェットが表示されることを確認済み（ウィジェットはデスクトップ用とモバイル用で別々に追加が必要）
-- ✅ v1.0.1 のスマートフォン向け縮小表示を Re のモバイル表示で確認済み
-- ✅ たたむボタン（「－」「＋」）も Re 上で確認済み
-- ✅ v1.0.2 で、GitHub Pages に置いた写真（`Photo/` フォルダ）が Re のカードに表示されることを確認済み
-- 使用した API は Re Visualizer 公式リポジトリ（reearth/reearth-visualizer）の型定義・テスト用プラグインと照合しています
+- ✅ Re:Earth Visualizer のモバイル表示でもウィジェットが表示されることを確認済み（ウィジェットはデスクトップ用とモバイル用で別々に追加が必要）
+- ✅ v1.0.1 のスマートフォン向け縮小表示を Re:Earth Visualizer のモバイル表示で確認済み
+- ✅ たたむボタン（「－」「＋」）も Re:Earth Visualizer 上で確認済み
+- ✅ v1.0.2 で、GitHub Pages に置いた写真（`Photo/` フォルダ）が Re:Earth Visualizer のカードに表示されることを確認済み
+- 使用した API は Re:Earth Visualizer 公式リポジトリ（reearth/reearth-visualizer）の型定義・テスト用プラグインと照合しています
 
 ## 今後の追加機能（予定）
 
-- 既存の Re スケッチレイヤーをクリックしたときに、対応する思い出カードを表示する連動機能
+- 既存の Re:Earth Visualizer スケッチレイヤーをクリックしたときに、対応する思い出カードを表示する連動機能
 
 ## ライセンス
 
